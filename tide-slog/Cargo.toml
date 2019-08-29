@@ -17,7 +17,7 @@ version = "0.1.0"
 
 [package.metadata.docs.rs]
 all-features = true
-rustdoc-args = ["--cfg docrs"]
+rustdoc-args = ["--cfg", "docrs"]
 
 [features]
 scope = ["slog-scope", "slog-scope-futures"]
@@ -33,5 +33,5 @@ slog-scope-futures = { version = "0.1.1", optional = true }
 [dev-dependencies]
 tide = { path = "../", default-features = false }
 uuid = { version = "0.7.4", default-features = false, features = ["v4"] }
-slog-stdlog = "3.0.2"
+slog-stdlog = "4.0"
 slog-scope = "4.1.1"

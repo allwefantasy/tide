@@ -1,5 +1,3 @@
-#![feature(async_await)]
-
 use bytes::Bytes;
 use futures_fs::FsPool;
 use futures_util::compat::*;
@@ -68,7 +66,7 @@ impl StaticFile {
             }
         };
 
-        let mime = mime_guess::guess_mime_type(path);
+        let mime = mime_guess::from_path(path).first_or_octet_stream();
         let mime_str = mime.as_ref();
         let size = meta.len();
 
